@@ -48,14 +48,33 @@
 
         <section id="gallery" class="gallery-section">
             <h2>Our Cake Gallery</h2>
-            <div class="gallery-item">
-                <img src="imaging/cake.jpg" alt="Wedding Cake" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="imaging/cake2.jpg" alt="Birthday Cake" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="imaging/cake3.jpg" alt="Special Occasion Cake" loading="lazy">
+            <div id="carousel" class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imaging/cake.jpg" alt="Wedding Cake" loading="lazy">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imaging/cake2.jpg" alt="Birthday Cake" loading="lazy">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imaging/cake3.jpg" alt="Special Occasion Cake" loading="lazy">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imaging/cake4.jpg" alt="Anniversary Cake" loading="lazy">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imaging/cake5.jpg" alt="Holiday Cake" loading="lazy">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+                <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="setSlide(0)"></span>
+                    <span class="indicator" onclick="setSlide(1)"></span>
+                    <span class="indicator" onclick="setSlide(2)"></span>
+                    <span class="indicator" onclick="setSlide(3)"></span>
+                    <span class="indicator" onclick="setSlide(4)"></span>
+                </div>
             </div>
         </section>
 
@@ -141,6 +160,38 @@
                     behavior: 'smooth'
                 });
             });
+        });
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+
+        function setSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCarousel();
         });
     </script>
   </body>
