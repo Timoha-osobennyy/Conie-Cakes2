@@ -55,7 +55,7 @@ header {
 }
 .hero-section {
   padding: 0pm;
-  background: var(--background-color);
+  background-color: #a15c5c;
   text-align: center;
   color: var(--text-color);
   box-shadow: 0 2px 10px var(--shadow-color);
@@ -243,6 +243,7 @@ main {
   background-blend-mode: overlay;
   border-radius: 100px;
   box-shadow: 0 5px 15px var(--shadow-color);
+  
 
 }
 
