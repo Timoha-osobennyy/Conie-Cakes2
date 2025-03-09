@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conie Cakes - Delicious Homemade Cakes</title>
+    <meta name="description" content="Discover our delicious selection of homemade cakes for any occasion.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="imaging/favicon.png" href="imaging/favicon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/imaging/favicon.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/imaging/favicon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/imaging/favicon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/imaging/favicon.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/imaging/favicon.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/imaging/favicon.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/imaging/favicon.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/imaging/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/imaging/favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/imaging/favicon.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/imaging/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/imaging/favicon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <header>
+        <h1><span>Conie Cakes</span></h1>
+        <nav aria-label="Main navigation">
+            <ul class="ulnav">
+                <li><a href="#home" aria-current="page">Home</a></li>
+                <li><a href="#cakes">Our Cakes</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <h2>Welcome to Conie Cakes!</h2>
+            <p>Discover our handcrafted cakes made with love and the finest ingredients.</p>
+        </section>
+
+        <section id="cakes">
+            <h2>Our Signature Cakes</h2>
+            <div class="cake-list">
+                <article class="cake-item">
+                    <img src="imaging/cake.jpg" alt="Chocolate Dream Cake" loading="lazy">
+                    <h3>Chocolate Dream</h3>
+                    <p>Rich chocolate layers with smooth ganache and fresh berries.</p>
+                    <button class="order-button" onclick="orderCake('Chocolate Dream')">Order Now</button>
+                </article>
+
+                <article class="cake-item">
+                    <img src="imaging/cake2.jpg" alt="Fresh Fruit Paradise Cake" loading="lazy">
+                    <h3>Fruit Paradise</h3>
+                    <p>Light sponge cake topped with seasonal fresh fruits and cream.</p>
+                    <button class="order-button" onclick="orderCake('Fruit Paradise')">Order Now</button>
+                </article>
+
+                <article class="cake-item">
+                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
+                    <h3>Honey Delight</h3>
+                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
+                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>We are passionate about creating beautiful and delicious cakes that make your special moments even more memorable.</p>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:info@coniecakes.com">info@coniecakes.com</a></p>
+                <p>Phone: <a href="tel:+71234567890">+7 123 456 7890</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer1">&copy; 2024 Conie Cakes. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function orderCake(cakeName) {
+            alert(`Thank you for ordering ${cakeName}! We will contact you shortly to confirm your order.`);
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+  </body>
+</html>
