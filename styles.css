@@ -15,9 +15,21 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  background-image: url('imaging/cake.jpg');
+    /* Путь к вашему изображению */
+    background-size: cover;
+    /* Изображение растягивается, чтобы покрыть весь экран */
+    background-position: center;
+    /* Центрируем изображение */
+    background-attachment: fixed;
+    /* Фиксируем фон при прокрутке страницы */
+    margin: 0;
+    /* Убираем отступы */
+    padding: 0;
+    height: 100vh;
+    /* Задаем высоту экрана */
 }
 
 header {
@@ -35,6 +47,57 @@ header h1 span {
   font-size: 2.5rem;
   color: white;
   text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+/* Стили для блока с иконками */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  /* Расстояние между иконками */
+  justify-content: center;
+  /* Центрируем иконки */
+  margin-top: 30px;
+}
+
+/* Общие стили для иконок */
+.icon {
+  text-decoration: none;
+  /* Убираем подчеркивание */
+  font-size: 30px;
+  /* Размер иконки */
+  color: #333;
+  /* Цвет текста (по умолчанию) */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Расстояние между иконкой и текстом */
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  /* Плавный переход */
+}
+
+/* Цвета и эффекты для каждой иконки */
+.icon.instagram {
+  background-color: #E4405F;
+  /* Фон для Instagram */
+  color: white;
+  /* Белый цвет текста */
+}
+
+.icon.facebook {
+  background-color: #1877F2;
+  /* Фон для Facebook */
+  color: white;
+  /* Белый цвет текста */
+}
+
+/* Эффект при наведении */
+.icon:hover {
+  opacity: 0.7;
+  /* Сделать иконки немного прозрачными при наведении */
+  transform: scale(1.1);
+  /* Немного увеличиваем иконку */
 }
 
 .ulnav {
