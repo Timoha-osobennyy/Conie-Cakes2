@@ -20,28 +20,28 @@ const Footer = () => {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-accent-foreground transition-colors"
+              className="hover:text-accent-foreground transition-transform transform hover:scale-110"
               aria-label="Facebook"
             >
-              <Facebook className="h-6 w-6" />
+              <Facebook className="h-6 w-6 text-primary hover:text-secondary" />
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-accent-foreground transition-colors"
+              className="hover:text-accent-foreground transition-transform transform hover:scale-110"
               aria-label="Instagram"
             >
-              <Instagram className="h-6 w-6" />
+              <Instagram className="h-6 w-6 text-primary hover:text-secondary" />
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-accent-foreground transition-colors"
+              className="hover:text-accent-foreground transition-transform transform hover:scale-110"
               aria-label="Twitter"
             >
-              <Twitter className="h-6 w-6" />
+              <Twitter className="h-6 w-6 text-primary hover:text-secondary" />
             </a>
           </div>
         </div>
