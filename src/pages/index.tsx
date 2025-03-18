@@ -1,6 +1,7 @@
 // Update this page (the content is just a fallback if you fail to update the page). Always include w-full and min-h-screen classes in the main element.
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Mail, Phone } from "lucide-react"; // Import the icons
 
 const Index = () => {
   return (
@@ -67,6 +68,21 @@ const Index = () => {
               <p className="text-lg font-semibold text-primary">$22.00</p>
             </CardFooter>
           </Card>
+        </section>
+        
+        {/* Contact Section with Icons */}
+        <section id="contact" className="mt-16 p-8 bg-secondary rounded-lg shadow-md">
+          <h2 className="text-3xl font-bold mb-6 text-center">Get in Touch</h2>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Mail className="h-5 w-5 text-primary" />
+              <a href="mailto:info@coniecakes.com" className="text-primary hover:underline">info@coniecakes.com</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone className="h-5 w-5 text-primary" />
+              <a href="tel:+71234567890" className="text-primary hover:underline">+7 123 456 7890</a>
+            </div>
+          </div>
         </section>
       </div>
     </main>

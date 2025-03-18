@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,9 +9,15 @@ const Footer = () => {
           {/* Contact Information */}
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold">Contact Us</h4>
-            <p className="text-sm">123 Cake Street, Sweet City</p>
-            <p className="text-sm">Email: support@cakeshop.com</p>
-            <p className="text-sm">Phone: +1 (555) 123-4567</p>
+            <div className="flex items-center gap-2 mt-2">
+              <Mail className="h-4 w-4" />
+              <a href="mailto:info@coniecakes.com" className="text-sm hover:underline">info@coniecakes.com</a>
+            </div>
+            <div className="flex items-center gap-2 mt-1">
+              <Phone className="h-4 w-4" />
+              <a href="tel:+71234567890" className="text-sm hover:underline">+7 (123) 456-7890</a>
+            </div>
+            <p className="text-sm mt-1">123 Cake Street, Sweet City</p>
           </div>
 
           {/* Social Media Links */}

@@ -243,8 +243,31 @@ main {
   background-blend-mode: overlay;
   border-radius: 100px;
   box-shadow: 0 5px 15px var(--shadow-color);
-  
+}
 
+/* Styling for contact info with icons */
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.contact-info a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 .order-button {
