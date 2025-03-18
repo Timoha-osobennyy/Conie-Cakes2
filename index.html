@@ -45,7 +45,7 @@
 
     <main>
         <section id="home" class="hero-section">
-            <h2><span>Welcome to Conie Cakes!</span> </h2>
+            <h2><span>Welcome to Conie Cakes!</span></h2>
             <p>Discover our handcrafted cakes made with love and the finest ingredients.</p>
         </section>
 
@@ -172,6 +172,27 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Добавляем анимацию при прокрутке
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.cake-item, .about-section, .contact-section, .social-icons');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.visibility = 'visible';
+                        element.style.animationPlayState = 'running';
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            // Запускаем один раз при загрузке страницы
+            animateOnScroll();
         });
     </script>
   </body>
