@@ -13,7 +13,20 @@ import { ThemeProvider } from "./components/layout/theme-provider";
 import { SidebarProvider } from "./components/ui/sidebar";
 import "./index.css";
 import Index from "./pages";
+import { useEffect } from "react";
+import { setupScrollAnimations } from "./utils/animationObserver";
+
 const queryClient = new QueryClient();
+
+// Component to setup animations after render
+const AnimationSetup = () => {
+  useEffect(() => {
+    // Setup scroll animations
+    setupScrollAnimations();
+  }, []);
+  
+  return null;
+};
 
 createRoot(document.getElementById("root")!).render(
   <QueryClientProvider client={queryClient}>
@@ -21,6 +34,7 @@ createRoot(document.getElementById("root")!).render(
       <TooltipProvider>
         <ThemeProvider>
           <BrowserRouter>
+            <AnimationSetup />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/cakes" element={<div>Cakes Page</div>} />

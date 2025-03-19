@@ -13,6 +13,82 @@
   box-sizing: border-box;
 }
 
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .about-section {
   padding: 2rem;
   background: var(--background-color);
@@ -23,6 +99,7 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   transition: background-color 0.3s ease;
+  animation: fadeInUp 1s ease-out;
 }
 
 body {
@@ -30,18 +107,12 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   background-image: url('imaging/freepik__the-style-is-candid-image-photography-with-natural__23254.jpeg');
-    /* Путь к вашему изображению */
-    background-size: cover;
-    /* Изображение растягивается, чтобы покрыть весь экран */
-    background-position: center;
-    /* Центрируем изображение */
-    background-attachment: fixed;
-    /* Фиксируем фон при прокрутке страницы */
-    margin: 0;
-    /* Убираем отступы */
-    padding: 0;
-    height: 100vh;
-    /* Задаем высоту экрана */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 header {
@@ -52,7 +123,9 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px var(--shadow-color);
+  animation: fadeIn 0.8s ease-out;
 }
+
 .hero-section {
   padding: 0pm;
   background-color: #a15c5c;
@@ -63,6 +136,7 @@ header {
   transition: background-color 0.3s ease;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  animation: fadeIn 1.2s ease-out;
 }
 
 header h1 span {
@@ -70,6 +144,8 @@ header h1 span {
   font-size: 2.5rem;
   color: white;
   text-shadow: 2px 2px 4px var(--shadow-color);
+  display: inline-block;
+  animation: pulse 2s infinite;
 }
 
 h2 span {
@@ -78,59 +154,49 @@ h2 span {
   color: rgb(105, 9, 9);
   text-shadow: 2px 2px 4px var(--shadow-color);
   transition: all 0.3s ease;
-  text-shadow: #ff6b6b;
-
+  display: inline-block;
+  animation: fadeInUp 1s ease-out;
 }
 
 /* Стили для блока с иконками */
 .social-icons {
   display: flex;
   gap: 15px;
-  /* Расстояние между иконками */
   justify-content: center;
-  /* Центрируем иконки */
   margin-top: 30px;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 /* Общие стили для иконок */
 .icon {
   text-decoration: none;
-  /* Убираем подчеркивание */
   font-size: 30px;
-  /* Размер иконки */
   color: #333;
-  /* Цвет текста (по умолчанию) */
   display: flex;
   align-items: center;
   gap: 8px;
-  /* Расстояние между иконкой и текстом */
   padding: 10px 20px;
   border-radius: 50px;
   transition: all 0.3s ease;
-  /* Плавный переход */
 }
 
 /* Цвета и эффекты для каждой иконки */
 .icon.instagram {
   background-color: #E4405F;
-  /* Фон для Instagram */
   color: white;
-  /* Белый цвет текста */
+  animation: fadeInLeft 1s ease-out;
 }
 
 .icon.facebook {
   background-color: #1877F2;
-  /* Фон для Facebook */
   color: white;
-  /* Белый цвет текста */
+  animation: fadeInRight 1s ease-out;
 }
 
 /* Эффект при наведении */
 .icon:hover {
   opacity: 0.7;
-  /* Сделать иконки немного прозрачными при наведении */
   transform: scale(1.1);
-  /* Немного увеличиваем иконку */
 }
 
 .ulnav {
@@ -142,6 +208,24 @@ h2 span {
 
 .ulnav li {
   margin: 0 1.5rem;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.ulnav li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.ulnav li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.ulnav li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.ulnav li:nth-child(4) {
+  animation-delay: 0.8s;
 }
 
 .ulnav a {
@@ -186,6 +270,16 @@ main {
   animation: fadeInUp 1s ease;
 }
 
+#home p {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+#cakes h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
 .cake-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -200,6 +294,20 @@ main {
   box-shadow: 0 5px 15px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.cake-item:nth-child(3n+1) {
+  animation-delay: 0.2s;
+}
+
+.cake-item:nth-child(3n+2) {
+  animation-delay: 0.4s;
+}
+
+.cake-item:nth-child(3n+3) {
+  animation-delay: 0.6s;
 }
 
 .cake-item:hover {
@@ -243,8 +351,45 @@ main {
   background-blend-mode: overlay;
   border-radius: 100px;
   box-shadow: 0 5px 15px var(--shadow-color);
-  
+}
 
+.contact-section h2 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Styling for contact info with icons */
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  opacity: 0;
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.contact-info p:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.contact-info p:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.contact-info a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 .order-button {
@@ -257,11 +402,42 @@ main {
   margin: 1rem;
   transition: all 0.3s ease;
   font-weight: 500;
+  position: relative;
+  overflow: hidden;
 }
 
 .order-button:hover {
   background-color: var(--accent-color);
   transform: scale(1.05);
+}
+
+.order-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.order-button:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
 }
 
 footer {
@@ -270,27 +446,17 @@ footer {
   text-align: center;
   padding: 2rem 0;
   margin-top: 3rem;
+  animation: fadeIn 1s ease-out;
 }
 
 .footer1 {
   opacity: 0.8;
-}
-img {
-  max-width: 100%;
-  /* Уменьшает изображение до размера родительского контейнера */
-  height: auto;
-  /* Сохраняет пропорции изображения */
+  animation: fadeInUp 1s ease-out;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 @media (max-width: 768px) {

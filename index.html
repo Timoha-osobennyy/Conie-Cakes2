@@ -45,7 +45,7 @@
 
     <main>
         <section id="home" class="hero-section">
-            <h2><span>Welcome to Conie Cakes!</span> </h2>
+            <h2><span>Welcome to Conie Cakes!</span></h2>
             <p>Discover our handcrafted cakes made with love and the finest ingredients.</p>
         </section>
 
@@ -53,16 +53,18 @@
             <h2>Our Signature Cakes</h2>
             <div class="cake-list">
                 <article class="cake-item">
-                    <img src="imaging/cake.jpg" alt="Chocolate Dream Cake" loading="lazy">
-                    <h3>Chocolate Dream</h3>
-                    <p>Rich chocolate layers with smooth ganache and fresh berries.</p>
+                    <img src="imaging/photo_5391261207748538572_y (1).jpg" alt="Chocolate Dream Cake" loading="lazy">
+                    <h3>Torta panqueque chocolate - frambuesa 💓</h3>
+                    <p>Discos de panqueque rellenos de trufa de chocolate y mermelada de frambuesa ❣️🎂
+                    Recuerda hacer tus consultas o realizar tus pedidos ❣️📱 ✨❣️ 🛍</p>
                     <button class="order-button" onclick="orderCake('Chocolate Dream')">Order Now</button>
                 </article>
 
                 <article class="cake-item">
-                    <img src="imaging/cake2.jpg" alt="Fresh Fruit Paradise Cake" loading="lazy">
-                    <h3>Fruit Paradise</h3>
-                    <p>Light sponge cake topped with seasonal fresh fruits and cream.</p>
+                    <img src="imaging/matilda.jpg" alt="Fresh Fruit Paradise Cake" loading="lazy">
+                    <h3>Torta matilda 🍫🥰❤️</h3>
+                    <p> Bizcocho húmedo de chocolate relleno y cubierto de ganache de chocolate 💕
+                     Recuerda hacer tus consultas o realizar tus pedidos con anticipación ❣️📱 ✨❣️ 🛍</p>
                     <button class="order-button" onclick="orderCake('Fruit Paradise')">Order Now</button>
                 </article>
 
@@ -140,8 +142,8 @@
         <section id="contact" class="contact-section">
             <h2>Get in Touch</h2>
             <div class="contact-info">
-                <p>Email: <a href="mailto:info@coniecakes.com">info@coniecakes.com</a></p>
-                <p>Phone: <a href="tel:+71234567890">+7 123 456 7890</a></p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@coniecakes.com">info@coniecakes.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+71234567890">+7 123 456 7890</a></p>
             </div>
         </section>
         <div class="social-icons">
@@ -172,6 +174,27 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Добавляем анимацию при прокрутке
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.cake-item, .about-section, .contact-section, .social-icons');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.visibility = 'visible';
+                        element.style.animationPlayState = 'running';
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            // Запускаем один раз при загрузке страницы
+            animateOnScroll();
         });
     </script>
   </body>
