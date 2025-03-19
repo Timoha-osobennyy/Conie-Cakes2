@@ -100,6 +100,8 @@
   border-top-right-radius: 15px;
   transition: background-color 0.3s ease;
   animation: fadeInUp 1s ease-out;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  animation: myAnim 2s ease 3s 4 alternate-reverse forwards;
 }
 
 body {
@@ -261,6 +263,8 @@ main {
 #home {
   text-align: center;
   padding: 3rem 0;
+  animation: fadeInUp 3s ease;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 #home h2 {
@@ -276,13 +280,13 @@ main {
 
 #cakes h2 {
 color: white;
-  text-decoration: none;
+  text-decoration-color:red ;
   font-weight: 500;
   position: relative;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
-  
-
+  animation: fadeInRight 5s infinite;
+  transform: rotateX(37deg) rotateY(11deg) rotateZ(0deg);
 }
 
 .cake-list {
@@ -290,6 +294,7 @@ color: white;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 2rem 0;
+  
 }
 
 .cake-item {
@@ -301,6 +306,7 @@ color: white;
   position: relative;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 .cake-item:nth-child(3n+1) {

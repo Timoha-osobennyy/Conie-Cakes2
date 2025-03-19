@@ -54,17 +54,17 @@
             <div class="cake-list">
                 <article class="cake-item">
                     <img src="imaging/photo_5391261207748538572_y (1).jpg" alt="Chocolate Dream Cake" loading="lazy">
-                    <h3>Torta panqueque chocolate - frambuesa 💓</h3>
-                    <p>Discos de panqueque rellenos de trufa de chocolate y mermelada de frambuesa ❣️🎂
-                    Recuerda hacer tus consultas o realizar tus pedidos ❣️📱 ✨❣️ 🛍</p>
-                    <button class="order-button" onclick="orderCake('Chocolate Dream')">Order Now</button>
+                    <h3>Chocolate-raspberry pancake cake 💓</h3>
+                    <p>Pancake discs filled with chocolate truffle and raspberry jam ❣️🎂
+                    Remember to ask any questions or place your order. ❣️📱 ✨❣️ 🛍</p>
+                    <button class="order-button" onclick="openInstagramMessage()">Order Now</button>
                 </article>
 
                 <article class="cake-item">
                     <img src="imaging/matilda.jpg" alt="Fresh Fruit Paradise Cake" loading="lazy">
-                    <h3>Torta matilda 🍫🥰❤️</h3>
-                    <p> Bizcocho húmedo de chocolate relleno y cubierto de ganache de chocolate 💕
-                     Recuerda hacer tus consultas o realizar tus pedidos con anticipación ❣️📱 ✨❣️ 🛍</p>
+                    <h3>Matilda cake 🍫🥰❤️</h3>
+                    <p>Moist chocolate sponge cake filled and topped with chocolate ganache 💕
+                    Remember to ask questions or place your order in advance.❣️📱 ✨❣️ 🛍</p>
                     <button class="order-button" onclick="orderCake('Fruit Paradise')">Order Now</button>
                 </article>
 
@@ -193,9 +193,22 @@
             };
             
             window.addEventListener('scroll', animateOnScroll);
-            // Запускаем один раз при загрузке страницы
+            
             animateOnScroll();
         });
+
+    
+        function openInstagramMessage() {
+                const username = 'Conie_cakes'; 
+                const message = 'Hello,%20I%20would%20like%20to%20order%20the%20Chocolate%20Raspberry%20Pancake%20Cake.'; // Текст сообщения
+
+                
+                const url = `https://www.instagram.com/direct/t/${username}/?text=${message}`;
+
+                
+                window.open(url, '_blank');
+            }
+        
     </script>
   </body>
 </html>
