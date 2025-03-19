@@ -106,7 +106,7 @@ body {
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
   line-height: 1.6;
-  background-image: url('imaging/freepik__the-style-is-candid-image-photography-with-natural__23254.jpeg');
+  background-image: url('imaging/Foncjnne.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -275,9 +275,14 @@ main {
 }
 
 #cakes h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  animation: fadeInUp 1s ease-out;
+color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  
+
 }
 
 .cake-list {
