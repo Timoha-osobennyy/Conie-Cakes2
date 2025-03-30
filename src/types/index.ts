@@ -1,17 +1,9 @@
-export interface CakeProduct {
+export interface Cake {
   id: string;
   name: string;
   description: string;
-  price: number;
-  imageUrls: string[];
-  ingredients: string[];
-}
-
-export interface CartItem {
-  id: string;
-  cakeId: string;
-  name: string;
-  price: number;
-  quantity: number;
-  imageUrl: string;
+  image: string;
+  ingredients?: string[];
+  price?: number;
+  category?: string;
 }

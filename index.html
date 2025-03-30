@@ -5,210 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conie Cakes - Delicious Homemade Cakes</title>
     <meta name="description" content="Discover our delicious selection of homemade cakes for any occasion.">
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-   
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   
-
-<link rel="icon" type="imaging/favicon.png" href="imaging/favicon.png">
-<link rel="apple-touch-icon" sizes="57x57" href="/imaging/favicon.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/imaging/favicon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/imaging/favicon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/imaging/favicon.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/imaging/favicon.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/imaging/favicon.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/imaging/favicon.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/imaging/favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/imaging/favicon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/imaging/favicon.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/imaging/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/imaging/favicon.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="imaging/favicon.png" href="imaging/favicon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/imaging/favicon.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/imaging/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/imaging/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/imaging/favicon.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/imaging/favicon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/imaging/favicon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/imaging/favicon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/imaging/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/imaging/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/imaging/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/imaging/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imaging/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <header>
-        <h1><span>Conie Cakes</span></h1>
-        <nav aria-label="Main navigation">
-            <ul class="ulnav">
-                <li><a href="#home" aria-current="page">Home</a></li>
-                <li><a href="#cakes">Our Cakes</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="home" class="hero-section">
-            <h2><span>Welcome to Conie Cakes!</span></h2>
-            <p>Discover our handcrafted cakes made with love and the finest ingredients.</p>
-        </section>
-
-        <section id="cakes">
-            <h2>Our Signature Cakes</h2>
-            <div class="cake-list">
-                <article class="cake-item">
-                    <img src="imaging/photo_5391261207748538572_y (1).jpg" alt="Chocolate Dream Cake" loading="lazy">
-                    <h3>Chocolate-raspberry pancake cake 💓</h3>
-                    <p>Pancake discs filled with chocolate truffle and raspberry jam ❣️🎂
-                    Remember to ask any questions or place your order. ❣️📱 ✨❣️ 🛍</p>
-                    <button class="order-button" onclick="openInstagramMessage()">Order Now</button>
-                </article>
-
-                <article class="cake-item">
-                    <img src="imaging/matilda.jpg" alt="Fresh Fruit Paradise Cake" loading="lazy">
-                    <h3>Matilda cake 🍫🥰❤️</h3>
-                    <p>Moist chocolate sponge cake filled and topped with chocolate ganache 💕
-                    Remember to ask questions or place your order in advance.❣️📱 ✨❣️ 🛍</p>
-                    <button class="order-button" onclick="orderCake('Fruit Paradise')">Order Now</button>
-                </article>
-
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-                <article class="cake-item">
-                    <img src="imaging/cake3.jpg " alt="Classic Honey Cake" loading="lazy">
-                    <h3>Honey Delight</h3>
-                    <p>Traditional honey cake with delicate cream and caramelized nuts.</p>
-                    <button class="order-button" onclick="orderCake('Honey Delight')">Order Now</button>
-                </article>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <h2>About Us</h2>
-            <p>📍Antofagasta, Chile
-            🧁Artisanal pastries
-            💗Traditional and sugar-free cakes
-            📩 Questions or orders to DM</p>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <h2>Get in Touch</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@coniecakes.com">info@coniecakes.com</a></p>
-                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+71234567890">+7 123 456 7890</a></p>
-            </div>
-        </section>
-        <div class="social-icons">
-          <a href="https://www.instagram.com/conie_cakes" target="_blank" class="icon instagram">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="https://www.facebook.com/yourprofile" target="_blank" class="icon facebook">
-                <i class="fab fa-facebook"></i> Facebook
-            </a>
-        </div>
-
-    </main>
-
-    <footer>
-        <p class="footer1">&copy; 2025 Conie Cakes. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function orderCake(cakeName) {
-            alert(`Thank you for ordering ${cakeName}! We will contact you shortly to confirm your order.`);
-        }
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Добавляем анимацию при прокрутке
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.cake-item, .about-section, .contact-section, .social-icons');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementPosition < windowHeight - 100) {
-                        element.style.visibility = 'visible';
-                        element.style.animationPlayState = 'running';
-                    }
-                });
-            };
-            
-            window.addEventListener('scroll', animateOnScroll);
-            
-            animateOnScroll();
-        });
-
-    
-        function openInstagramMessage() {
-                const username = 'Conie_cakes'; 
-                const message = 'Hello,%20I%20would%20like%20to%20order%20the%20Chocolate%20Raspberry%20Pancake%20Cake.'; // Текст сообщения
-
-                
-                const url = `https://www.instagram.com/direct/t/${username}/?text=${message}`;
-
-                
-                window.open(url, '_blank');
-            }
-        
-    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

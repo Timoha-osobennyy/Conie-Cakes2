@@ -1,82 +1,119 @@
 import React from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { X, Instagram, Trash2, Plus, Minus } from "lucide-react";
+import { useCart } from "@/hooks/use-cart";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { ShoppingCart } from "lucide-react";
 
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  imageUrl: string;
-}
-
-interface CartProps {
-  items: CartItem[];
-  onRemoveItem: (id: string) => void;
-  onCheckout: () => void;
-}
-
-const Cart: React.FC<CartProps> = ({ items, onRemoveItem, onCheckout }) => {
-  const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
+export function Cart() {
+  const { items, removeFromCart, updateQuantity, totalItems, clearCart } = useCart();
+  
+  const openInstagramMessage = () => {
+    if (items.length === 0) return;
+    
+    const orderText = items
+      .map(item => `${item.cake.name} (x${item.quantity})`)
+      .join("\\n");
+    
+    const message = `Hello, I would like to order:\\n${orderText}`;
+    const username = 'Conie_cakes';
+    const url = `https://www.instagram.com/direct/t/${username}/?text=${encodeURIComponent(message)}`;
+    
+    window.open(url, '_blank');
+  };
+  
   return (
-    <div className="w-full max-w-lg mx-auto">
-      <Card className="rounded-lg border border-border bg-card p-6 shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-xl font-semibold">Shopping Cart</CardTitle>
-          <CardDescription className="text-sm text-muted-foreground">
-            Review your selected items
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {items.length === 0 ? (
-            <p className="text-sm text-muted-foreground">Your cart is empty.</p>
-          ) : (
-            <ul className="space-y-4">
-              {items.map((item) => (
-                <li key={item.id} className="flex items-center gap-4">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name}
-                    className="w-16 h-16 object-cover rounded-lg"
-                  />
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">{item.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                      ${item.price.toFixed(2)} x {item.quantity}
-                    </p>
-                  </div>
-                  <Button
-                    variant="destructive"
-                    size="sm"
-                    onClick={() => onRemoveItem(item.id)}
-                  >
-                    Remove
-                  </Button>
-                </li>
-              ))}
-            </ul>
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline" size="icon" className="relative">
+          <ShoppingCart className="h-5 w-5" />
+          {totalItems > 0 && (
+            <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center text-xs">
+              {totalItems}
+            </span>
           )}
-        </CardContent>
-        {items.length > 0 && (
-          <CardFooter className="flex flex-col gap-4">
-            <div className="flex justify-between text-sm font-medium">
-              <span>Total:</span>
-              <span>${total.toFixed(2)}</span>
-            </div>
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full"
-              onClick={onCheckout}
-            >
-              Proceed to Checkout
+        </Button>
+      </SheetTrigger>
+      <SheetContent className="w-full sm:max-w-md">
+        <SheetHeader>
+          <SheetTitle>Ваша корзина</SheetTitle>
+        </SheetHeader>
+        
+        {items.length === 0 ? (
+          <div className="flex flex-col items-center justify-center h-[70vh]">
+            <ShoppingCart className="h-16 w-16 text-muted-foreground mb-4" />
+            <p className="text-muted-foreground">Ваша корзина пуста</p>
+            <Button variant="link" asChild className="mt-4">
+              <a href="/#cakes">Перейти к выбору тортов</a>
             </Button>
-          </CardFooter>
+          </div>
+        ) : (
+          <>
+            <div className="space-y-4 mt-4 max-h-[60vh] overflow-auto pr-2">
+              {items.map((item) => (
+                <div key={item.cake.id} className="flex items-center space-x-4 border-b pb-4">
+                  <div className="w-16 h-16 rounded-md overflow-hidden">
+                    <img 
+                      src={item.cake.image} 
+                      alt={item.cake.name} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h4 className="font-medium">{item.cake.name}</h4>
+                    <div className="flex items-center mt-2">
+                      <Button 
+                        variant="outline" 
+                        size="icon" 
+                        className="h-8 w-8 rounded-full"
+                        onClick={() => updateQuantity(item.cake.id, item.quantity - 1)}
+                      >
+                        <Minus className="h-3 w-3" />
+                      </Button>
+                      <span className="mx-2 w-8 text-center">{item.quantity}</span>
+                      <Button 
+                        variant="outline" 
+                        size="icon" 
+                        className="h-8 w-8 rounded-full"
+                        onClick={() => updateQuantity(item.cake.id, item.quantity + 1)}
+                      >
+                        <Plus className="h-3 w-3" />
+                      </Button>
+                    </div>
+                  </div>
+                  
+                  <Button 
+                    variant="ghost" 
+                    size="icon"
+                    onClick={() => removeFromCart(item.cake.id)}
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-6 space-y-4">
+              <Button 
+                className="w-full flex items-center gap-2" 
+                onClick={openInstagramMessage}
+              >
+                <Instagram className="h-5 w-5" />
+                Заказать через Instagram
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                className="w-full" 
+                onClick={clearCart}
+              >
+                Очистить корзину
+              </Button>
+            </div>
+          </>
         )}
-      </Card>
-    </div>
+      </SheetContent>
+    </Sheet>
   );
-};
-
-export default Cart;
+}
