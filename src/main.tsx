@@ -1,51 +1,28 @@
-// start the app always with '/' route
-import Banner from "@/components/layout/Banner";
-import { Toaster as Sonner } from "@/components/ui/sonner";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartProvider } from "@/hooks/use-cart";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import HomePage from "@/pages/index";
+import CakeDetail from "@/pages/CakeDetail";
+import "./styles.css";
 
-import { Toaster } from "@/components/ui/toaster";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router";
-
-import { TooltipProvider } from "./components/ui/tooltip";
-
-import { ThemeProvider } from "./components/layout/theme-provider";
-import { SidebarProvider } from "./components/ui/sidebar";
-import "./index.css";
-import Index from "./pages";
-import { useEffect } from "react";
-import { setupScrollAnimations } from "./utils/animationObserver";
-
-const queryClient = new QueryClient();
-
-// Component to setup animations after render
-const AnimationSetup = () => {
-  useEffect(() => {
-    // Setup scroll animations
-    setupScrollAnimations();
-  }, []);
-  
-  return null;
-};
-
-createRoot(document.getElementById("root")!).render(
-  <QueryClientProvider client={queryClient}>
-    <SidebarProvider>
-      <TooltipProvider>
-        <ThemeProvider>
-          <BrowserRouter>
-            <AnimationSetup />
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <CartProvider>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <div className="flex-1">
             <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/cakes" element={<div>Cakes Page</div>} />
-              <Route path="/cart" element={<div>Cart Page</div>} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/cake/:id" element={<CakeDetail />} />
             </Routes>
-          </BrowserRouter>
-          <Sonner />
-          <Toaster />
-          <Banner />
-        </ThemeProvider>
-      </TooltipProvider>
-    </SidebarProvider>
-  </QueryClientProvider>
+          </div>
+          <Footer />
+        </div>
+      </CartProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );
