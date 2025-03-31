@@ -199,16 +199,16 @@
         });
 
     
-        function openInstagramMessage() {
-                const username = 'Conie_cakes'; 
-                const message = 'Hello,%20I%20would%20like%20to%20order%20the%20Chocolate%20Raspberry%20Pancake%20Cake.'; // Текст сообщения
+    function openInstagramMessage() {
+        const username = 'Conie_cakes';
+        const message = 'Hello,%20I%20would%20like%20to%20order%20the%20Chocolate%20Raspberry%20Pancake%20Cake.'; // Текст сообщения
 
-                
-                const url = `https://www.instagram.com/direct/t/${Conie_cakes}/?text=${message}`;
+        // Исправленный URL
+        const url = `https://www.instagram.com/direct/t/${username}/?text=${message}`;
 
-                
-                window.open(url, '_blank');
-            }
+        window.open(url, '_blank');
+    }
+
         
     </script>
   </body>
